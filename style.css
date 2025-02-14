@@ -1,37 +1,76 @@
-    body{
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        gap: 20px;
-    }
-    
-    #calculadora {
-        border: 2px solid black; 
-        border-radius: 15px;
-        margin-top: 40px;
-        margin-left: 100px;
-        height: 500px;
-        width: 400px;
-        padding: 20px;
-    }
+body {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos bajen si no caben */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 50px;
+    background-color: #1B262C;
+}
 
-    #resultado{
-        border: 2px solid black; 
-        border-radius: 15px;
-        height: 100px;
-        margin-top: 20px;
-        padding-top: 10px;
-        padding-right: 10px;
-        text-align: right;
-        font-size: 50px;
-    }
+#calculadora, #historial {
+    border: 2px solid #00ADB5;
+    border-radius: 15px;
+    margin-top: 80px;
+    height: 500px;
+    max-width: 28rem;
+    min-width: 24rem;
+    padding: 20px;
+    flex: 1 1 32rem; /* Se adapta al ancho disponible, pero no supera 32rem */
+    background-color: #393E46;
+    color: #FFFFFF;
+}
 
-    #historial{
-        border: 2px solid black; 
-        border-radius: 15px;
-        margin-top: 40px;
-        margin-left: 100px;
-        height: 500px;
-        width: 400px;
-        padding: 20px;
-    }
+#resultado{
+    border-radius: 15px;
+    height: 100px;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-right: 10px;
+    text-align: right;
+    font-size: 50px;
+    border: 2px solid black; 
+    background-color: #222831;
+}
+
+#botones{
+    display: flex;
+    height: 330px;
+}
+
+#numeros{
+    justify-content: center;
+    width: 250px;
+    max-width: 208px;
+}
+
+
+button {
+    margin: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 55px;
+    background-color: #00ADB5; 
+    color: #EEEEEE;
+    border:1px solid #EEEEEE
+}
+
+#operaciones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#delate, #igual{
+    background-color: #EEEEEE;
+    color: #00ADB5;
+    width: 71.68px;
+    border:1px solid #00ADB5
+}
+
+#delhistory{
+    font-size: 20px;
+    width: auto;
+}
