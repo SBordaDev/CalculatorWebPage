@@ -12,12 +12,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function agregarNumero(digit) {
-        if (currentInput === '0' && digit !== '.') {
-            currentInput = digit; // Si el primer número es 0, lo reemplazamos con el número presionado
-        } else {
-            currentInput += digit; // Si ya hay un número, agregamos el siguiente
-        }
-        resultado.textContent = currentInput; // Actualizamos el contenido del párrafo
+        let partes = currentInput.split(/[\+\-\x\/\%]/); // Divide la entrada en números usando operadores como separadores
+    let ultimoNumero = partes[partes.length - 1]; // Toma el último número ingresado
+
+    if (digit === '.' && ultimoNumero.includes('.')) {
+        return; // Evita agregar más de un punto decimal dentro del mismo número
+    }
+
+    if (currentInput === '0' && digit !== '.') {
+        currentInput = digit; // Reemplaza el 0 inicial si se ingresa otro número
+    } else {
+        currentInput += digit; // Agrega el dígito al número actual
+    }
+
+    resultado.textContent = currentInput; // Actualiza la pantalla de la calculadora
     }
 
     /* Botones de las Operaciones */
